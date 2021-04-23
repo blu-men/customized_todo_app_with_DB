@@ -4,9 +4,10 @@ namespace App\Controller;
 class HelloController extends AppController {
 
 	public $name = 'Hello';
-	public $autoRender = false;
-  	
+	public $autoRender = true; 
+	
 	public function index(){
-		echo "hello world!";
+		$this->viewBuilder()->autoLayout(false);
 	}
+	
 }
