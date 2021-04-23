@@ -3,4 +3,4 @@
 
 ## .gitignoreには記載なし
 
-## webroot/index.ctp HelloController.php Layout Template/Hello cake.hello.css
+## webroot/index.ctp HelloController.php Layout Template/Hello cake.hello.css Template/Element
