@@ -4,11 +4,10 @@ namespace App\Controller;
 class BoardsController extends AppController {
 
 	public function index($id = null){
-		$data = $this->Boards->find('all');
-		$this->set('data',$data->toArray());
-		$this->set('count', $data->count());
+		$data = $this->Boards->find('list')->toArray();
+		$this->set('data',$data);
 	}
-
+	
 	public function addRecord(){
 		if ($this->request->is('post')) {
 			//エンティティクラス(レコードに入るデータ)のインスタンス作成、代入
