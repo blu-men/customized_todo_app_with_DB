@@ -1,0 +1,48 @@
+2021-05-03 09:07:40 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mydata.users' doesn't exist in /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Database/Schema/Collection.php on line 132
+Stack Trace:
+#0 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(98): Cake\Database\Schema\Collection->_reflect('Column', 'users', Array, Object(Cake\Database\Schema\TableSchema))
+#1 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(61): Cake\Database\Schema\Collection->describe('users', Array)
+#2 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/ORM/Table.php(566): Cake\Database\Schema\CachedCollection->describe('users')
+#3 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/ORM/Table.php(691): Cake\ORM\Table->getSchema()
+#4 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(221): Cake\ORM\Table->getPrimaryKey()
+#5 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(131): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(114): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'users', 'Users')
+#7 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(101): Bake\Shell\Task\ModelTask->bake('Users')
+#8 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/bake/src/Shell/BakeShell.php(282): Bake\Shell\Task\ModelTask->main('Users')
+#9 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(64): Bake\Shell\BakeShell->Bake\Shell\{closure}('Users', 0)
+#10 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/bake/src/Shell/BakeShell.php(283): Cake\Collection\Collection->each(Object(Closure))
+#11 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Console/Shell.php(517): Bake\Shell\BakeShell->all('users')
+#12 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Console/CommandRunner.php(384): Cake\Console\Shell->runCommand(Array, true)
+#13 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Console/CommandRunner.php(162): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#14 /Applications/MAMP/htdocs/customized_todo_app_with_DB/bin/cake.php(12): Cake\Console\CommandRunner->run(Array)
+#15 {main}
+
+
+Caused by: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mydata.users' doesn't exist in /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php on line 37
+Stack Trace:
+#0 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(37): PDOStatement->execute(NULL)
+#1 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Database/Connection.php(358): Cake\Database\Statement\MysqlStatement->execute()
+#2 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#3 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Database/Connection.php(361): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#4 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Database/Connection.php(310): Cake\Database\Connection->query('SHOW FULL COLUM...')
+#5 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#6 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Database/Connection.php(314): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#7 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(130): Cake\Database\Connection->execute('SHOW FULL COLUM...', Array)
+#8 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(98): Cake\Database\Schema\Collection->_reflect('Column', 'users', Array, Object(Cake\Database\Schema\TableSchema))
+#9 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(61): Cake\Database\Schema\Collection->describe('users', Array)
+#10 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/ORM/Table.php(566): Cake\Database\Schema\CachedCollection->describe('users')
+#11 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/ORM/Table.php(691): Cake\ORM\Table->getSchema()
+#12 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(221): Cake\ORM\Table->getPrimaryKey()
+#13 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(131): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#14 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(114): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'users', 'Users')
+#15 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(101): Bake\Shell\Task\ModelTask->bake('Users')
+#16 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/bake/src/Shell/BakeShell.php(282): Bake\Shell\Task\ModelTask->main('Users')
+#17 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(64): Bake\Shell\BakeShell->Bake\Shell\{closure}('Users', 0)
+#18 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/bake/src/Shell/BakeShell.php(283): Cake\Collection\Collection->each(Object(Closure))
+#19 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Console/Shell.php(517): Bake\Shell\BakeShell->all('users')
+#20 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Console/CommandRunner.php(384): Cake\Console\Shell->runCommand(Array, true)
+#21 /Applications/MAMP/htdocs/customized_todo_app_with_DB/vendor/cakephp/cakephp/src/Console/CommandRunner.php(162): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#22 /Applications/MAMP/htdocs/customized_todo_app_with_DB/bin/cake.php(12): Cake\Console\CommandRunner->run(Array)
+#23 {main}
+
+

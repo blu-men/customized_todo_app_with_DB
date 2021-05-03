@@ -260,8 +260,8 @@ return [
      */
     'Datasources' => [
         'default' => [
-            'className' => Connection::class,
-            'driver' => Mysql::class,
+            'className' => 'Cake\Database\Connection',
+            'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
             'host' => 'localhost',
             /*
@@ -270,22 +270,19 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            /*
-             * It is recommended to set these options through your environment or app_local.php
-             */
-            //'username' => 'my_app',
-            //'password' => 'secret',
-            //'database' => 'my_app',
+            'username' => 'root',
+            'password' => 'root',
+            'database' => 'mydata',
             /*
              * You do not need to set this flag to use full utf-8 encoding (internal default since CakePHP 3.6).
              */
-            //'encoding' => 'utf8mb4',
+            'encoding' => 'utf8mb4',
             'timezone' => 'UTC',
             'flags' => [],
             'cacheMetadata' => true,
             'log' => false,
 
-            /*
+            /**
              * Set identifier quoting to true if you are using reserved words or
              * special characters in your table or column names. Enabling this
              * setting will result in queries built using the Query Builder having
@@ -295,7 +292,7 @@ return [
              */
             'quoteIdentifiers' => false,
 
-            /*
+            /**
              * During development, if using MySQL < 5.6, uncommenting the
              * following line could boost the speed at which schema metadata is
              * fetched from the database. It can also be set directly with the
@@ -306,6 +303,7 @@ return [
 
             'url' => env('DATABASE_URL', null),
         ],
+
 
         /*
          * The test connection is used during the test suite.
