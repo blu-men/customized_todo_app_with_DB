@@ -1,14 +1,28 @@
 <?php
-$humberger = 4.95;
-$chocoMilk = 1.95;
-$cola = 85;
-$tax = 0.75;
-$chip = 0.016;
+class Entree {
+  private $name;
+  public $ingredients = array();
 
-$withouttax = 2 * $humberger + $chocoMilk + $cola;
+  public function getName() {
+    return $this->name;
+  }
 
-$paytax = $withouttax * $tax;
-$paychip = $withouttax * $chip;
+  public function __construct($name, $ingredients) 
+  {
+    if (! is_array($ingredients)) {
+      throw new Exception('$ingredients must be an array');
+    }
+    $this->name = $name;
+    $this->ingredients = $ingredients;
+  }
 
-print $withouttax + $paychip + $paytax;
+  public function hasIngredient($ingredient) {
+    return in_array($ingredient, $this->ingredients);
+  }
+}
+
+$drink = new Entree('Glass of Milk', 'milk');
+if ($drink->hasIngredient('milk')) {
+  print 'Yummy';
+}
 ?>
